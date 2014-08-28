@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Eric_Crypto_Library
 {
-    public interface CryptoSystem
+    public interface ICryptoSystem
     {
-        public IEnumerable<char> getPlainText();
-        public IEnumerable<char> getCipherText();
-        public IEnumerable<string> getPossibleKeys();
-        public IEnumerable<char> encrypt(IEnumerable<char> input, string key);
-        public IEnumerable<char> decrypt(IEnumerable<char> input, string key);
+        IEnumerable<char> GetPlainText();
+        IEnumerable<char> GetCipherText();
+        IEnumerable<object> GetPossibleKeys();
+        IEnumerable<char> Encrypt(IEnumerable<char> input, IKey key);
+        IEnumerable<char> Decrypt(IEnumerable<char> input, IKey key);
     }
 }
