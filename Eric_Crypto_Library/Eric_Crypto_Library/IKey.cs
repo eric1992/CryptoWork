@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Eric_Crypto_Library
 {
-    public interface IKey
+    public interface IKey: IEnumerable<IKey>
     {
-        string ToString();
+
     }
 }
