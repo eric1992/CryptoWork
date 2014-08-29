@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using Eric_Crypto_Library;
 using NUnit.Framework;
@@ -23,8 +24,7 @@ namespace Eric_Crypto_Library_Test
             for (var i = 1; i < 25; i++)
             {
                 Substitutions = new Dictionary<int, int>(i);
-                Key = new SubstitutionCipherKey(Substitutions);
-                Assert.IsNull(Key.ToString());
+                Assert.Throws<ArgumentException>(() => new SubstitutionCipherKey(Substitutions));
             }
         }
 

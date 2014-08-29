@@ -6,7 +6,6 @@ using System.Text;
 namespace Eric_Crypto_Library
 {
     public interface IKey: IEnumerable<IKey>
-    {
-
+    { 
     }
 }

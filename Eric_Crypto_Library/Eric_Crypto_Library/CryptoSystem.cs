@@ -6,14 +6,15 @@ namespace Eric_Crypto_Library
     /// <summary>
     /// 
     /// </summary>
-    /// <typeparam name="I">Specifies the type of the plain text of the cryptosystem</typeparam>
-    /// <typeparam name="O">Specifies the type of the cipher text of the cryptosystem</typeparam>
-    public interface ICryptoSystem<I, O, K> where K : IKey
+    /// <typeparam name="Plain">Specifies the type of the plain text of the cryptosystem</typeparam>
+    /// <typeparam name="Cipher">Specifies the type of the cipher text of the cryptosystem</typeparam>
+    /// <typeparam name="Key">Specifies the key for type for the system.</typeparam>
+    public interface ICryptoSystem<Plain, Cipher, Key> where Key : IKey
     {
-        IEnumerable<I> GetPlainText();
-        IEnumerable<O> GetCipherText();
-        IEnumerator GetPossibleKeys();
-        IEnumerable<O> Encrypt(IEnumerable<I> input, K key);
-        IEnumerable<I> Decrypt(IEnumerable<I> input, K key);
+        Plain GetPlainText();
+        Cipher GetCipherText();
+        IEnumerator<Key> GetPossibleKeys();
+        Cipher Encrypt(Plain input, Key key);
+        Plain Decrypt(Plain input, Key key);
     }
 }
