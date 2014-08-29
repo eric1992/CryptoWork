@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Eric_Crypto_Library
 {
@@ -9,7 +6,7 @@ namespace Eric_Crypto_Library
     {
         IEnumerable<char> GetPlainText();
         IEnumerable<char> GetCipherText();
-        IEnumerable<object> GetPossibleKeys();
+        IEnumerator<IKey> GetPossibleKeys();
         IEnumerable<char> Encrypt(IEnumerable<char> input, IKey key);
         IEnumerable<char> Decrypt(IEnumerable<char> input, IKey key);
     }

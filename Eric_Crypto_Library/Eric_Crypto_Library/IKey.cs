@@ -7,6 +7,6 @@ namespace Eric_Crypto_Library
 {
     public interface IKey
     {
-        string GetAsString();
+        string ToString();
     }
 }

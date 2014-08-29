@@ -6,67 +6,26 @@ using System.Text;
 
 namespace Eric_Crypto_Library
 {
-    public class ShiftCipher : ICryptoSystem
+    public class ShiftCipher : SubstitutionCipher
     {
-        private static readonly List<char> PlainTextAlphabet = "abcdefghijklmnopqrstuvqxyz".ToCharArray().ToList();
 
-        private static readonly List<char> CipherTestAlphabet =
-            "abcdefghijklmnopqrstuvqxyz".ToUpperInvariant().ToCharArray().ToList(); 
+       // private static readonly List<ShiftCipherKey> PossibleKeys = new List<int> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}.Select(g => ShiftCipherKey.Parse(g)).ToList(); 
 
-        private static readonly List<ShiftCipherKey> PossibleKeys = new List<int> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}.Select(g => ShiftCipherKey.Parse(g)).ToList(); 
 
-        public IEnumerable<char> GetPlainText()
-        {
-            return PlainTextAlphabet;
-        }
-
-        public IEnumerable<char> GetCipherText()
-        {
-            return CipherTestAlphabet;
-        }
-
-        IEnumerable<object> ICryptoSystem.GetPossibleKeys()
-        {
-            return GetPossibleKeys();
-        }
-
-        public IEnumerable<char> Encrypt(IEnumerable<char> input, IKey key)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<char> Decrypt(IEnumerable<char> input, IKey key)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<IKey> GetPossibleKeys()
-        {
-            return (IEnumerable<object>) PossibleKeys;
-        }
-
-        public IEnumerable<char> Encrypt(IEnumerable<char> input, ShiftCipherKey key)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<char> Decrypt(IEnumerable<char> input, string key)
-        {
-            throw new NotImplementedException();
-        }
     }
 
-    public class ShiftCipherKey : IKey
+    public class ShiftCipherKey : SubstitutionCipherKey
     {
         public int Shift;
-        public string GetAsString()
+
+        public ShiftCipherKey(Dictionary<int, int> substitutions, int shift) : base(substitutions)
         {
-            return Shift.ToString();
+            Shift = shift;
         }
 
-        public static ShiftCipherKey Parse(int i)
+        public string ToString()
         {
-            return  new ShiftCipherKey() {Shift = i % 26};
+            return Shift.ToString();
         }
     }
 }
