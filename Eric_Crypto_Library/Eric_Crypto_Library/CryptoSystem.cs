@@ -1,13 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace Eric_Crypto_Library
 {
-    public interface ICryptoSystem
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="I">Specifies the type of the plain text of the cryptosystem</typeparam>
+    /// <typeparam name="O">Specifies the type of the cipher text of the cryptosystem</typeparam>
+    public interface ICryptoSystem<I, O, K> where K : IKey
     {
-        IEnumerable<char> GetPlainText();
-        IEnumerable<char> GetCipherText();
-        IEnumerator<IKey> GetPossibleKeys();
-        IEnumerable<char> Encrypt(IEnumerable<char> input, IKey key);
-        IEnumerable<char> Decrypt(IEnumerable<char> input, IKey key);
+        IEnumerable<I> GetPlainText();
+        IEnumerable<O> GetCipherText();
+        IEnumerator GetPossibleKeys();
+        IEnumerable<O> Encrypt(IEnumerable<I> input, K key);
+        IEnumerable<I> Decrypt(IEnumerable<I> input, K key);
     }
 }
