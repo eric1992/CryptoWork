@@ -44,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharToIntConverter.cs" />
-    <Compile Include="CryptoSystem.cs" />
-    <Compile Include="IKey.cs" />
-    <Compile Include="InvalidKeyException.cs" />
+    <Compile Include="CryptoSystems\CryptoSystem.cs" />
+    <Compile Include="Keys\Enumerators\SubstitutionKeyEnumerator.cs" />
+    <Compile Include="Keys\SubstitutionCipherKey.cs" />
+    <Compile Include="Keys\IKey.cs" />
+    <Compile Include="Keys\InvalidKeyException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShiftCipher.cs" />
-    <Compile Include="SubstitutionCipher.cs" />
+    <Compile Include="CryptoSystems\ShiftCipher.cs" />
+    <Compile Include="CryptoSystems\SubstitutionCipher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
