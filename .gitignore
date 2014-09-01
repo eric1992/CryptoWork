@@ -30,7 +30,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -38,3 +39,7 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+*.exe
+*.manifest
+*.cache
+Eric_Crypto_Library/HomeWork1/obj/x86/Debug/HomeWork1.csproj.FileListAbsolute.txt
