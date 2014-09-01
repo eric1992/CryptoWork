@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Eric_Crypto_Library
+namespace Eric_Crypto_Library.Keys.Enumerators
 {
     public class ShiftKeyEnumerator : IEnumerator<ShiftCipherKey>
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Eric_Crypto_Library
+namespace Eric_Crypto_Library.Keys
 {
     public class ShiftCipherKey : SubstitutionCipherKey
     {
