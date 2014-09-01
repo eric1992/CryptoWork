@@ -1,7 +1,0 @@
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library\bin\Debug\Eric_Crypto_Library.dll
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library\bin\Debug\Eric_Crypto_Library.pdb
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library\bin\Debug\Moq.dll
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library\bin\Debug\Moq.xml
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library\obj\Debug\Eric_Crypto_Library.csprojResolveAssemblyReference.cache
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library\obj\Debug\Eric_Crypto_Library.dll
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library\obj\Debug\Eric_Crypto_Library.pdb
