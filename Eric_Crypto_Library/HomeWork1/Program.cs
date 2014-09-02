@@ -14,7 +14,7 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-            Q1();
+            Q4();
         }
 
         /// <summary>
@@ -37,6 +37,18 @@ namespace HomeWork1
                 plainText = new string(cryptoSys.Decrypt(cipherText, keyEnumerator.Current).ToArray());
                 resultFile.WriteLine("Key " + keyEnumerator.Current.Shift + ": " + plainText);
             } while (keyEnumerator.MoveNext());
+            resultFile.Close();
+        }
+
+        static void Q4()
+        {
+            var cipherInput = "AKVFZVZVSEFFIEYFITZFSEVKVAUFSQZVYVIXQUHIZEFXFQZLG".ToLowerInvariant().ToCharArray();
+            var analyzer = new CharacterAnalyzer();
+            analyzer.Text = cipherInput;
+            //Defines the file to dump out to.
+            var resultFile = new StreamWriter(@"C:\Users\Eric\Dropbox\Fall2014\Crypto\HW1\Question2Out.txt");
+            analyzer.CharacterCounts = analyzer.CharacterCounts.OrderByDescending(kp => kp.Value).ToDictionary(kp => kp.Key, kp => kp.Value);
+            resultFile.WriteLine(analyzer.ToString());
             resultFile.Close();
         }
     }

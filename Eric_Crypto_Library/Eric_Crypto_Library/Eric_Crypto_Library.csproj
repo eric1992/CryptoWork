@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterAnalyzer.cs" />
     <Compile Include="CharToIntConverter.cs" />
     <Compile Include="CryptoSystems\CryptoSystem.cs" />
+    <Compile Include="Keys\Enumerators\ShiftKeyEnumerator.cs" />
+    <Compile Include="Keys\ShiftCipherKey.cs" />
     <Compile Include="Keys\Enumerators\SubstitutionKeyEnumerator.cs" />
     <Compile Include="Keys\SubstitutionCipherKey.cs" />
     <Compile Include="Keys\IKey.cs" />
