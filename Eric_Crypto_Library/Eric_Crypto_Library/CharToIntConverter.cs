@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
 
 namespace Eric_Crypto_Library
 {
+    /// <summary>
+    /// Used to convert char in a-z to int in 0-25
+    /// </summary>
     public class CharToIntConverter
     {
+        /// <summary>
+        /// Maps chars to the appropriate int repesentation.
+        /// </summary>
         public static Dictionary<char, int> Mappings = new Dictionary<char, int>()
         {
             {'a', 0},
@@ -37,6 +40,7 @@ namespace Eric_Crypto_Library
             {'y', 24},
             {'z', 25}
         };
+
         public static int Convert(char input)
         {
             return Mappings[input];
@@ -46,6 +50,5 @@ namespace Eric_Crypto_Library
         {
             return Mappings.First(kp => kp.Value == input).Key;
         }
-
     }
 }

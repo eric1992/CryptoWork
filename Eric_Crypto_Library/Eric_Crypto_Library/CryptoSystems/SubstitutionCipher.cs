@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Eric_Crypto_Library.CryptoSystems;
+using Eric_Crypto_Library.Keys;
 
 namespace Eric_Crypto_Library
 {
@@ -29,6 +31,9 @@ namespace Eric_Crypto_Library
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Encrypts a given char ienumerable.
+        /// </summary>
         public IEnumerable<char> Encrypt(IEnumerable<char> input, SubstitutionCipherKey key)
         {
             var intInput = input.Select(CharToIntConverter.Convert);
@@ -37,6 +42,9 @@ namespace Eric_Crypto_Library
             return charCipherText;
         }
 
+        /// <summary>
+        /// Decrypts a given char ienumerable
+        /// </summary>
         public IEnumerable<char> Decrypt(IEnumerable<char> input, SubstitutionCipherKey key)
         {
             var intCipherText = input.Select(CharToIntConverter.Convert);

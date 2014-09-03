@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Eric_Crypto_Library.Keys.Enumerators
 {
+    /// <summary>
+    /// An enumerator to iterate over all the possible key for a shift cipher.
+    /// </summary>
     public class ShiftKeyEnumerator : IEnumerator<ShiftCipherKey>
     {
         public ShiftKeyEnumerator()

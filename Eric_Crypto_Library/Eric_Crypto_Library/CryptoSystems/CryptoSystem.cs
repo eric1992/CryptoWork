@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Eric_Crypto_Library.Keys;
 
-namespace Eric_Crypto_Library
+namespace Eric_Crypto_Library.CryptoSystems
 {
     /// <summary>
     /// A generic interface for a cryptosystem.
@@ -32,6 +32,12 @@ namespace Eric_Crypto_Library
         /// <param name="key">The given key for the text.</param>
         /// <returns>The output of the encryption function</returns>
         Cipher Encrypt(Plain input, Key key);
+        /// <summary>
+        /// Decrypt the giving cipher text to the given key.
+        /// </summary>
+        /// <param name="input">The given cipher text.</param>
+        /// <param name="key">The given key for the text.</param>
+        /// <returns>The output of the decryption function</returns>
         Plain Decrypt(Plain input, Key key);
     }
 }

@@ -5,18 +5,23 @@ using System.Text;
 
 namespace Eric_Crypto_Library
 {
+    /// <summary>
+    /// Used to perform relative frequency analysis on a given char enumerable
+    /// </summary>
     public class CharacterAnalyzer
     {
         private IEnumerable<char> _text;
         public IEnumerable<char> Text
         {
             get { return _text; }
+            //Updates both the text and the relative frequencies.
             set
             {
                 if(value == null)
                     throw new ArgumentException("");
                 _text = value;
                 CharacterCounts = new Dictionary<char, int>();
+                //Increments the count of the given char or adds it to the dictionary if it is not in it.
                 foreach (var currentChar in value)
                 {
                     try

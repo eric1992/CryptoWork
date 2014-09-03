@@ -15,6 +15,9 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
+            //Generate output for question 1.
+            Q1();
+            //Generate output for question 2.
             Q4();
         }
 
@@ -50,15 +53,17 @@ namespace HomeWork1
             analyzer.Text = cipherInput;
             //Defines the file to dump out to.
             var resultFile = new StreamWriter(@"C:\Users\Eric\Dropbox\Fall2014\Crypto\HW1\Question2Out.txt");
+
             analyzer.CharacterCounts = analyzer.CharacterCounts.OrderByDescending(kp => kp.Value).ToDictionary(kp => kp.Key, kp => kp.Value);
+            resultFile.WriteLine(analyzer.ToString());
+
             do
             {
                 var outer = new string(cryptoSys.Decrypt(cipherInput, enumerator.Current).ToArray());
                 resultFile.WriteLine(outer);
 
             } while (enumerator.MoveNext());
-            resultFile.WriteLine(analyzer.ToString());
-
+            
             resultFile.Close();
         }
     }

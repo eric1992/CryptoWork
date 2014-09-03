@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Eric_Crypto_Library;
+using Eric_Crypto_Library.Keys;
 using NUnit.Framework;
 
 namespace Eric_Crypto_Library_Test

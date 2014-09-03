@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Eric_Crypto_Library.Keys.Enumerators
 {
+    /// <summary>
+    /// Used to iterate over all the possible keys of an affine cipher.
+    /// </summary>
     public class AffineKeyEnumerator : IEnumerator<AffineCipherKey>
     {
         public AffineKeyEnumerator()
