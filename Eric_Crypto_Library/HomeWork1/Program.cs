@@ -6,6 +6,7 @@ using System.Security.AccessControl;
 using System.Text;
 using Eric_Crypto_Library;
 using Eric_Crypto_Library.CryptoSystems;
+using Eric_Crypto_Library.Keys;
 using Eric_Crypto_Library.Keys.Enumerators;
 
 namespace HomeWork1
@@ -44,11 +45,20 @@ namespace HomeWork1
         {
             var cipherInput = "AKVFZVZVSEFFIEYFITZFSEVKVAUFSQZVYVIXQUHIZEFXFQZLG".ToLowerInvariant().ToCharArray();
             var analyzer = new CharacterAnalyzer();
+            var cryptoSys = new AffineCipher();
+            var enumerator = new AffineKeyEnumerator();
             analyzer.Text = cipherInput;
             //Defines the file to dump out to.
             var resultFile = new StreamWriter(@"C:\Users\Eric\Dropbox\Fall2014\Crypto\HW1\Question2Out.txt");
             analyzer.CharacterCounts = analyzer.CharacterCounts.OrderByDescending(kp => kp.Value).ToDictionary(kp => kp.Key, kp => kp.Value);
+            do
+            {
+                var outer = new string(cryptoSys.Decrypt(cipherInput, enumerator.Current).ToArray());
+                resultFile.WriteLine(outer);
+
+            } while (enumerator.MoveNext());
             resultFile.WriteLine(analyzer.ToString());
+
             resultFile.Close();
         }
     }

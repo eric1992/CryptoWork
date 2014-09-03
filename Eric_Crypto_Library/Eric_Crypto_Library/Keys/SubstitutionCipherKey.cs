@@ -42,6 +42,11 @@ namespace Eric_Crypto_Library
             return new SubstitutionKeyEnumerator();
         }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         public override string ToString()
         {
             if (_substitutions == null)
@@ -52,11 +57,6 @@ namespace Eric_Crypto_Library
                 outString.Append(i.Value + ",");
             }
             return outString.ToString(0, outString.Length - 1);
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
         }
 
         

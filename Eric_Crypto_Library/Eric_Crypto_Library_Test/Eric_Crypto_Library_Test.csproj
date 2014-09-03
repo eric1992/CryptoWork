@@ -49,10 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterAnalyzerTest.cs" />
+    <Compile Include="KeyTests\AffineCipherKeyTest.cs" />
+    <Compile Include="KeyTests\ShiftCipherKeyTest.cs" />
+    <Compile Include="KeyTests\SubstitutionCipherKeyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShiftCipherKeyTest.cs" />
     <Compile Include="ShiftCipherTest.cs" />
-    <Compile Include="SubstitutionCipherKeyTest.cs" />
     <Compile Include="SubstitutionCipherTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +65,7 @@
       <Name>Eric_Crypto_Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
