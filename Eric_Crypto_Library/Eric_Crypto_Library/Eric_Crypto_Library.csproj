@@ -47,6 +47,8 @@
     <Compile Include="CharToIntConverter.cs" />
     <Compile Include="CryptoSystems\AffineCipher.cs" />
     <Compile Include="CryptoSystems\CryptoSystem.cs" />
+    <Compile Include="CryptoSystems\PolyAlphabeticCipher.cs" />
+    <Compile Include="CryptoSystems\PolyAlphabeticCipherKey.cs" />
     <Compile Include="Keys\AffineCipherKey.cs" />
     <Compile Include="Keys\Enumerators\AffineKeyEnumerator.cs" />
     <Compile Include="Keys\Enumerators\ShiftKeyEnumerator.cs" />
