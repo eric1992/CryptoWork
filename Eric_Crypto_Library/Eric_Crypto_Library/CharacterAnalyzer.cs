@@ -10,7 +10,7 @@ namespace Eric_Crypto_Library
     /// </summary>
     public class CharacterAnalyzer
     {
-        private IEnumerable<char> _text;
+        private string _text;
         public IEnumerable<char> Text
         {
             get { return _text; }
@@ -19,28 +19,44 @@ namespace Eric_Crypto_Library
             {
                 if(value == null)
                     throw new ArgumentException("");
-                _text = value;
-                CharacterCounts = new Dictionary<char, int>();
-                //Increments the count of the given char or adds it to the dictionary if it is not in it.
-                foreach (var currentChar in value)
+                _text = new string(value.ToArray());
+                GramCountsList = new List<Dictionary<string, int>>();
+                for (int i = 0; i < maxGramLength; i++)
                 {
-                    try
+                    GramCountsList.Add(new Dictionary<string, int>());
+                }
+                Dictionary<string, int> currentGramCount;
+                String currentGram;
+                //Increments the count of the given char or adds it to the dictionary if it is not in it.
+                for (int characterIndex = 0; characterIndex < _text.Count(); characterIndex++)
+                {
+                    for (int gramLength = 1; gramLength < GramCountsList.Count + 1 && characterIndex + gramLength < _text.Length; gramLength++)
                     {
-                        CharacterCounts[currentChar]++;
-                    }
-                    catch (Exception)
-                    {
-                        CharacterCounts.Add(currentChar, 1);
+                        currentGramCount = GramCountsList[gramLength - 1];
+                        try
+                        {
+                            currentGram = _text.Substring(characterIndex, gramLength);
+                            currentGramCount[currentGram]++;
+                        }
+                        catch (Exception)
+                        {
+                            currentGramCount.Add(_text.Substring(characterIndex, gramLength), 1);
+                        }
                     }
                 }
             }
         }
 
-        public Dictionary<char, int> CharacterCounts;
-
-        public CharacterAnalyzer()
+        public List<Dictionary<string, int>> GramCountsList;
+        private int maxGramLength;
+        public CharacterAnalyzer(int maxGramLength)
         {
-            CharacterCounts = new Dictionary<char, int>();
+            GramCountsList = new List<Dictionary<string, int>>();
+            this.maxGramLength = maxGramLength;
+            for (int i = 0; i < maxGramLength; i++)
+            {
+                GramCountsList.Add(new Dictionary<string, int>());
+            }
         }
 
         public int TotalCharacters
@@ -51,10 +67,16 @@ namespace Eric_Crypto_Library
         public override string ToString()
         {
             var returnString = new StringBuilder("The Counts:");
-            foreach (var characterCount in CharacterCounts)
+            var i = 1;
+            foreach (var gramList in GramCountsList)
             {
-                returnString.Append("\n(" + characterCount.Key + ", " + characterCount.Value + ", " + ((double)characterCount.Value)/((double)TotalCharacters) + ")");
+                returnString.Append("\nThe " + i++ + " gram counts.");
+                foreach (var gramCount in gramList)
+                {
+                    returnString.Append("\n(" + gramCount.Key + ", " + gramCount.Value + ", " + ((double)gramCount.Value) / ((double)TotalCharacters) + ")");
+                }
             }
+            
             return returnString.ToString();
         }
     }
