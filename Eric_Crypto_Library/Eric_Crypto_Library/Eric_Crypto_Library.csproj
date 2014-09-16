@@ -52,6 +52,7 @@
     <Compile Include="CryptoSystems\AffineCipher.cs" />
     <Compile Include="CryptoSystems\CryptoSystem.cs" />
     <Compile Include="CryptoSystems\HillCipher.cs" />
+    <Compile Include="IntegerModulo.cs" />
     <Compile Include="Keys\HillCipherKey.cs" />
     <Compile Include="CryptoSystems\PolyAlphabeticCipher.cs" />
     <Compile Include="CryptoSystems\PolyAlphabeticCipherKey.cs" />

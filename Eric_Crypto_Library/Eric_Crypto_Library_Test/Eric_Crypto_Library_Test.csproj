@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterAnalyzerTest.cs" />
+    <Compile Include="IntegerModuloTest.cs" />
     <Compile Include="KeyTests\AffineCipherKeyTest.cs" />
     <Compile Include="KeyTests\ShiftCipherKeyTest.cs" />
     <Compile Include="KeyTests\SubstitutionCipherKeyTest.cs" />
