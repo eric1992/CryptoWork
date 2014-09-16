@@ -32,15 +32,5 @@ namespace Eric_Crypto_Library.Keys
                 throw new IndexOutOfRangeException("Index out of bounds.");
             return keys.Remove(keys.ElementAt(index));
         }
-
-        public IEnumerator<IKey> GetEnumerator()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
     }
 }

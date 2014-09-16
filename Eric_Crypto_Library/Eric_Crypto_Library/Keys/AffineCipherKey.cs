@@ -66,7 +66,7 @@ namespace Eric_Crypto_Library.Keys
             PlainToCipher = GenerateSubstitutions(_a, _b);
         }
 
-        public new IEnumerator<IKey> GetEnumerator()
+        public static IEnumerator<IKey> GetEnumerator()
         {
             return new AffineKeyEnumerator();
         }

@@ -48,16 +48,6 @@ namespace Eric_Crypto_Library.Keys
             _substitutions = substitutions;
         }
 
-        public IEnumerator<IKey> GetEnumerator()
-        {
-            return new SubstitutionKeyEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
         public override string ToString()
         {
             if (_substitutions == null) 
