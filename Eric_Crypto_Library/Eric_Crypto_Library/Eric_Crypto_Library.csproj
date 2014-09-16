@@ -31,11 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.3.2.3\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1408.0717\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +51,8 @@
     <Compile Include="CharToIntConverter.cs" />
     <Compile Include="CryptoSystems\AffineCipher.cs" />
     <Compile Include="CryptoSystems\CryptoSystem.cs" />
+    <Compile Include="CryptoSystems\HillCipher.cs" />
+    <Compile Include="Keys\HillCipherKey.cs" />
     <Compile Include="CryptoSystems\PolyAlphabeticCipher.cs" />
     <Compile Include="CryptoSystems\PolyAlphabeticCipherKey.cs" />
     <Compile Include="Keys\AffineCipherKey.cs" />
