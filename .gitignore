@@ -46,3 +46,15 @@ Eric_Crypto_Library/HomeWork1/obj/x86/Debug/HomeWork1.csproj.FileListAbsolute.tx
 *.dll
 Eric_Crypto_Library/Eric_Crypto_Library/obj/Debug/Eric_Crypto_Library.csproj.FileListAbsolute.txt
 *.dll
+Eric_Crypto_Library/Eric_Crypto_Library/bin/Debug/MathNet.Numerics.xml
+Eric_Crypto_Library/Eric_Crypto_Library_Test/bin/Debug/MathNet.Numerics.xml
+Eric_Crypto_Library/HomeWork1/bin/Debug/MathNet.Numerics.xml
+Eric_Crypto_Library/Homework3/bin/Debug/MathNet.Numerics.xml
+Eric_Crypto_Library/Homework3/obj/x86/Debug/Homework3.csproj.FileListAbsolute.txt
+Eric_Crypto_Library/packages/MathNet.Numerics.3.2.3/lib/net35/MathNet.Numerics.xml
+Eric_Crypto_Library/packages/MathNet.Numerics.3.2.3/lib/net40/MathNet.Numerics.xml
+Eric_Crypto_Library/packages/MathNet.Numerics.3.2.3/lib/portable-net40+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/MathNet.Numerics.XML
+Eric_Crypto_Library/packages/MathNet.Numerics.3.2.3/lib/portable-net45+sl5+netcore45+MonoAndroid1+MonoTouch1/MathNet.Numerics.XML
+Eric_Crypto_Library/packages/MathNet.Numerics.3.2.3/license.txt
+Eric_Crypto_Library/packages/MathNet.Numerics.3.2.3/MathNet.Numerics.3.2.3.nupkg
+Eric_Crypto_Library/packages/MathNet.Numerics.3.2.3/readme.txt
