@@ -33,7 +33,7 @@ namespace Eric_Crypto_Library.CryptoSystems
             return cipherTextChar;
         }
 
-        private IEnumerable<int> Encrypt(IEnumerable<int> plainTextInt, PolyAlphabeticCipherKey key)
+        protected IEnumerable<int> Encrypt(IEnumerable<int> plainTextInt, PolyAlphabeticCipherKey key)
         {
             var textInt = plainTextInt as int[] ?? plainTextInt.ToArray();
             var cipherTextInt = new List<int>(textInt.Count());
@@ -58,7 +58,7 @@ namespace Eric_Crypto_Library.CryptoSystems
             return plainTextChar;
         }
 
-        private IEnumerable<int> Decrypt(IEnumerable<int> cipherTextInt, PolyAlphabeticCipherKey key)
+        protected IEnumerable<int> Decrypt(IEnumerable<int> cipherTextInt, PolyAlphabeticCipherKey key)
         {
             var textInt = cipherTextInt as int[] ?? cipherTextInt.ToArray();
             var plainTextInt = new List<int>(textInt.Count());
@@ -69,7 +69,7 @@ namespace Eric_Crypto_Library.CryptoSystems
             {
                 currentKey = key.Keys.ElementAt(keyIndex);
                 currentCipher = textInt.ElementAt(textIndex);
-                currentPlain = currentKey.PlainToCipher[currentCipher];
+                currentPlain = currentKey.PlainToCipher.First(g => g.Value == currentCipher).Key;
                 plainTextInt.Add(currentPlain);
             }
             return plainTextInt;

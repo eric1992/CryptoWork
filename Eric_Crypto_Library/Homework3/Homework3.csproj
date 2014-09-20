@@ -2,18 +2,20 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{589E1505-E00F-4710-BA70-D1C47BF6EC20}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Eric_Crypto_Library</RootNamespace>
-    <AssemblyName>Eric_Crypto_Library</AssemblyName>
+    <RootNamespace>Homework3</RootNamespace>
+    <AssemblyName>Homework3</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,7 +24,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,9 +37,6 @@
     <Reference Include="MathNet.Numerics">
       <HintPath>..\packages\MathNet.Numerics.3.2.3\lib\net40\MathNet.Numerics.dll</HintPath>
     </Reference>
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.2.1408.0717\lib\net40\Moq.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -47,29 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharacterAnalyzer.cs" />
-    <Compile Include="CharToIntConverter.cs" />
-    <Compile Include="CoincidenceAnalyzer.cs" />
-    <Compile Include="CryptoSystems\AffineCipher.cs" />
-    <Compile Include="CryptoSystems\CryptoSystem.cs" />
-    <Compile Include="CryptoSystems\HillCipher.cs" />
-    <Compile Include="CryptoSystems\VigenereCipher.cs" />
-    <Compile Include="Keys\VigenereCipherKey.cs" />
-    <Compile Include="IntegerModulo.cs" />
-    <Compile Include="Keys\HillCipherKey.cs" />
-    <Compile Include="CryptoSystems\PolyAlphabeticCipher.cs" />
-    <Compile Include="CryptoSystems\PolyAlphabeticCipherKey.cs" />
-    <Compile Include="Keys\AffineCipherKey.cs" />
-    <Compile Include="Keys\Enumerators\AffineKeyEnumerator.cs" />
-    <Compile Include="Keys\Enumerators\ShiftKeyEnumerator.cs" />
-    <Compile Include="Keys\ShiftCipherKey.cs" />
-    <Compile Include="Keys\Enumerators\SubstitutionKeyEnumerator.cs" />
-    <Compile Include="Keys\SubstitutionCipherKey.cs" />
-    <Compile Include="Keys\IKey.cs" />
-    <Compile Include="Keys\InvalidKeyException.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CryptoSystems\ShiftCipher.cs" />
-    <Compile Include="CryptoSystems\SubstitutionCipher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eric_Crypto_Library\Eric_Crypto_Library.csproj">
+      <Project>{589E1505-E00F-4710-BA70-D1C47BF6EC20}</Project>
+      <Name>Eric_Crypto_Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

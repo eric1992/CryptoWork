@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Eric_Crypto_Library.Keys;
 
 namespace Eric_Crypto_Library.Keys
 {
@@ -11,7 +9,7 @@ namespace Eric_Crypto_Library.Keys
         public ICollection<SubstitutionCipherKey> Keys
         {
             get { return keys; }
-            private set { keys = value; }
+            protected set { keys = value; }
         }
 
         private ICollection<SubstitutionCipherKey> keys;
