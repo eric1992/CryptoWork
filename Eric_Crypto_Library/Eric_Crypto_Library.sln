@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork1", "HomeWork1\HomeWork1.csproj", "{0DAE4C35-80A2-4F82-9748-7E329999AF2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3", "Homework3\Homework3.csproj", "{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Eric_Crypto_Library.vsmdi
@@ -57,6 +59,16 @@ Global
 		{0DAE4C35-80A2-4F82-9748-7E329999AF2A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{0DAE4C35-80A2-4F82-9748-7E329999AF2A}.Release|x86.ActiveCfg = Release|x86
 		{0DAE4C35-80A2-4F82-9748-7E329999AF2A}.Release|x86.Build.0 = Release|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Debug|x86.ActiveCfg = Debug|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Debug|x86.Build.0 = Debug|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|Any CPU.ActiveCfg = Release|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|x86.ActiveCfg = Release|x86
+		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
