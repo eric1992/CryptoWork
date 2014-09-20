@@ -1,9 +1,0 @@
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\bin\Debug\Eric_Crypto_Library_Test.dll
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\bin\Debug\Eric_Crypto_Library_Test.pdb
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\bin\Debug\Eric_Crypto_Library.dll
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\bin\Debug\nunit.framework.dll
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\bin\Debug\Eric_Crypto_Library.pdb
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\bin\Debug\nunit.framework.xml
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\obj\Debug\Eric_Crypto_Library_Test.csprojResolveAssemblyReference.cache
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\obj\Debug\Eric_Crypto_Library_Test.dll
-C:\Users\Eric\Documents\GitHub\CryptoWork\Eric_Crypto_Library\Eric_Crypto_Library_Test\obj\Debug\Eric_Crypto_Library_Test.pdb
