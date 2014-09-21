@@ -6,15 +6,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eric_Crypto_Library_Test", "Eric_Crypto_Library_Test\Eric_Crypto_Library_Test.csproj", "{B668CBF6-5E5B-4626-A973-EF41672DFD4E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{076848A8-0162-4A15-8E83-9F27398D5C30}"
-	ProjectSection(SolutionItems) = preProject
-		Eric_Crypto_Library.vsmdi = Eric_Crypto_Library.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork1", "HomeWork1\HomeWork1.csproj", "{0DAE4C35-80A2-4F82-9748-7E329999AF2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3", "Homework3\Homework3.csproj", "{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework4", "Homework4\Homework4.csproj", "{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -69,6 +66,16 @@ Global
 		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|Mixed Platforms.Build.0 = Release|x86
 		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|x86.ActiveCfg = Release|x86
 		{EE9A9E0C-3EB5-4B42-9A8B-9F55EAEC1FE5}.Release|x86.Build.0 = Release|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Debug|x86.ActiveCfg = Debug|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Debug|x86.Build.0 = Debug|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Release|Any CPU.ActiveCfg = Release|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Release|Mixed Platforms.Build.0 = Release|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Release|x86.ActiveCfg = Release|x86
+		{9E329520-C0D7-4238-8AD7-49A6CE92E3D8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
