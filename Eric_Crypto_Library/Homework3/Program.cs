@@ -4,7 +4,6 @@ using System.Linq;
 using Eric_Crypto_Library;
 using Eric_Crypto_Library.CryptoSystems;
 using Eric_Crypto_Library.Keys;
-using MathNet.Numerics.LinearAlgebra;
 
 namespace Homework3
 {
@@ -72,16 +71,16 @@ namespace Homework3
 
         static void Q2()
         {
-            var cipher = new HillCipher();
+           /* var cipher = new HillCipher();
             var r1 = new double[] {3, 2};
             var r2 = new double[] {5, 11};
             var mBuilder = Matrix<double>.Build;
             var keyMatrix = mBuilder.DenseOfRowArrays(new List<double[]> {r1, r2});
-            var key = new HillCipherKey(26, keyMatrix);
+            var key = new HillCipherTwoByTwoKey(26, keyMatrix);
             var cipherText = "BOTLTN".ToLower().ToCharArray().ToList().Select(CharToIntConverter.Convert).ToList();
             var decText = new[] { 271, 368, 304, 617, 342, 667 };
             var a = decText.ToList().Select(g => g%26);
-            var b = a.Select(CharToIntConverter.Convert).ToList();
+            var b = a.Select(CharToIntConverter.Convert).ToList();*/
         }
     }
 }

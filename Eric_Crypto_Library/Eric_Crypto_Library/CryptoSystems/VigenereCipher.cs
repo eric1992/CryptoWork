@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Eric_Crypto_Library.Keys;
 
 namespace Eric_Crypto_Library.CryptoSystems
