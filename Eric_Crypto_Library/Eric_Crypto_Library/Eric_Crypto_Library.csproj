@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MathNet.Numerics">
+    <Reference Include="MathNet.Numerics, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MathNet.Numerics.3.2.3\lib\net40\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="Moq">
@@ -56,7 +56,7 @@
     <Compile Include="CryptoSystems\VigenereCipher.cs" />
     <Compile Include="Keys\VigenereCipherKey.cs" />
     <Compile Include="IntegerModulo.cs" />
-    <Compile Include="Keys\HillCipherKey.cs" />
+    <Compile Include="Keys\HillCipherTwoByTwoKey.cs" />
     <Compile Include="CryptoSystems\PolyAlphabeticCipher.cs" />
     <Compile Include="CryptoSystems\PolyAlphabeticCipherKey.cs" />
     <Compile Include="Keys\AffineCipherKey.cs" />

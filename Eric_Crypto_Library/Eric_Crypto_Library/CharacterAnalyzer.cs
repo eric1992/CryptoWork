@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 
@@ -37,6 +38,30 @@ namespace Eric_Crypto_Library
         }
 
         public Dictionary<char, int> CharacterCounts;
+
+        public Dictionary<string, int> DiagramCount
+        {
+            get
+            {
+                var textAsString = new string(_text.ToArray());
+                var count = new Dictionary<string, int>();
+
+                for (int i = 0; i < _text.Count()- 1; i++)
+                {
+                    var diagram = textAsString.Substring(i, 2);
+                    if (count.ContainsKey(diagram))
+                    {
+                        count[diagram]++;
+                    }
+                    else
+                    {
+                        count.Add(diagram, 1);
+                    }
+                }
+                count = count.OrderByDescending(g => g.Value).ToDictionary(g => g.Key, g => g.Value);
+                return count;
+            }
+        }
 
         public CharacterAnalyzer()
         {

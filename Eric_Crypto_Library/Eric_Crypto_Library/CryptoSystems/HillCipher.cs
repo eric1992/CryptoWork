@@ -1,33 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Xml.Schema;
 using Eric_Crypto_Library.Keys;
-using MathNet.Numerics.LinearAlgebra;
-using MathNet.Numerics.LinearAlgebra.Complex;
-using MathNet.Numerics.LinearAlgebra.Storage;
 
 namespace Eric_Crypto_Library.CryptoSystems
 {
-    public class HillCipher : ICryptoSystem<IEnumerable<char>, IEnumerable<char>, HillCipherKey>
+    public class HillCipherTwoByTwo : ICryptoSystem<IEnumerable<char>, IEnumerable<char>, HillCipherTwoByTwoKey>
     {
-        public IEnumerable<char> GetPlainText()
-        {
-            throw new NotImplementedException();
-        }
 
-        public IEnumerable<char> GetCipherText()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerator<HillCipherKey> GetPossibleKeys()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<char> Encrypt(IEnumerable<char> input, HillCipherKey key)
+        public IEnumerable<char> Encrypt(IEnumerable<char> input, HillCipherTwoByTwoKey key)
         {
             var intPlain = input.Select(CharToIntConverter.Convert);
             var intCipher = Encrypt(intPlain, key);
@@ -36,26 +17,23 @@ namespace Eric_Crypto_Library.CryptoSystems
 
         }
 
-        private IEnumerable<int> Encrypt(IEnumerable<int> input, HillCipherKey key)
+        private IEnumerable<int> Encrypt(IEnumerable<int> input, HillCipherTwoByTwoKey key)
         {
             var intPlain = new List<int>(input);
-            if (intPlain.Count % key.Dimension != 0)
+            if (intPlain.Count % 2 != 0)
             {
-                while (intPlain.Count % key.Dimension != 0)
-                {
-                    intPlain.Add(0);
-                }
+                intPlain.Add(0);
             }
             var intPlainBlocks = new List<List<int>>();
             var tempBlock = new List<int>();
-            for (var i = 0; i < intPlain.Count; i += key.Dimension)
+            for (var i = 0; i < intPlain.Count; i += 2)
             {
                 tempBlock.Clear();
-                for (var j = i; j < key.Dimension; j++)
+                for (var j = i; j < i + 2; j++)
                 {
                     tempBlock.Add(intPlain[j]);
                 }
-                intPlainBlocks.Add(tempBlock);
+                intPlainBlocks.Add(new List<int>(tempBlock));
             }
             var intCipher = new List<int>();
             foreach (var intPlainBlock in intPlainBlocks)
@@ -65,27 +43,17 @@ namespace Eric_Crypto_Library.CryptoSystems
             return intCipher;
         }
 
-        private IEnumerable<int> EncryptBlock(IEnumerable<int> input, HillCipherKey key)
+        private IEnumerable<int> EncryptBlock(IEnumerable<int> input, HillCipherTwoByTwoKey key)
         {
-            if(input.Count() != key.Key.ColumnCount)
-                throw new ArgumentException("Input must have same length as key's height and width.");
-            var matrixBuilder = Matrix<double>.Build;
-            var matrixPlain = matrixBuilder.DenseOfRowArrays(new[] {input.Select(g => (double)g).ToArray()});
-            var matrixCipher = matrixPlain * key.Key;
-            if(matrixCipher.RowCount != 1)
-                throw new Exception("There should be only one row.");
-            var intCipher = matrixCipher.Row(1).ToArray();
-            var integerConverter = new IntegerModulo(key.Modulo, 0);
-            for (int i = 0; i < intCipher.Count(); i++)
-            {
-                integerConverter.Value = (int)intCipher[i];
-                intCipher[i] = integerConverter.Value;
-            }
-            return intCipher.Select(g => (int)g);
-
+            if(input == null || key == null)
+                throw new ArgumentException("Null arguement provided");
+            if(input.Count() != 2)
+                throw new ArgumentException("Must act on two element lists");
+            var cipherInt = (input.Select(g => new IntegerModulo(26, g)).ToList()*key).Select(g => g.Value).ToList();
+            return cipherInt;
         }
 
-        public IEnumerable<char> Decrypt(IEnumerable<char> input, HillCipherKey key)
+        public IEnumerable<char> Decrypt(IEnumerable<char> input, HillCipherTwoByTwoKey key)
         {
             var intPlain = input.Select(CharToIntConverter.Convert);
             var intCipher = Decrypt(intPlain, key);
@@ -93,26 +61,23 @@ namespace Eric_Crypto_Library.CryptoSystems
             return charCipher;
         }
 
-        private IEnumerable<int> Decrypt(IEnumerable<int> input, HillCipherKey key)
+        private IEnumerable<int> Decrypt(IEnumerable<int> input, HillCipherTwoByTwoKey key)
         {
             var intCipher = new List<int>(input);
-            if (intCipher.Count % key.Dimension != 0)
+            if (intCipher.Count % 2 != 0)
             {
-                while (intCipher.Count % key.Dimension != 0)
-                {
-                    intCipher.Add(0);
-                }
+                intCipher.Add(0);
             }
             var intCipherBlocks = new List<List<int>>();
             var tempBlock = new List<int>();
-            for (var i = 0; i < intCipher.Count; i += key.Dimension)
+            for (var i = 0; i < intCipher.Count; i += 2)
             {
                 tempBlock.Clear();
-                for (var j = i; j < key.Dimension; j++)
+                for (var j = i; j < i + 2; j++)
                 {
                     tempBlock.Add(intCipher[j]);
                 }
-                intCipherBlocks.Add(tempBlock);
+                intCipherBlocks.Add(new List<int>(tempBlock));
             }
             var intPlain = new List<int>();
             foreach (var intPlainBlock in intCipherBlocks)
@@ -122,23 +87,14 @@ namespace Eric_Crypto_Library.CryptoSystems
             return intPlain;
         }
 
-        private IEnumerable<int> DecryptBlock(IEnumerable<int> input, HillCipherKey key)
+        private IEnumerable<int> DecryptBlock(IEnumerable<int> input, HillCipherTwoByTwoKey key)
         {
-            if (input.Count() != key.Key.ColumnCount)
-                throw new ArgumentException("Input must have same length as key's height and width.");
-            var matrixBuilder = Matrix<double>.Build;
-            var matrixCipher = matrixBuilder.DenseOfRowArrays(new[] {input.Select(g => (double)g).ToArray()});
-            var matrixC = matrixCipher * key.InverseKey;
-            if (matrixC.RowCount != 1)
-                throw new Exception("There should be only one row.");
-            var intPlain = matrixC.Row(1);
-            var integerConverter = new IntegerModulo(key.Modulo, 0);
-            for (int i = 0; i < intPlain.Count; i++)
-            {
-                integerConverter.Value = (int)intPlain[i];
-                intPlain[i] = integerConverter.Value;
-            }
-            return intPlain.Select(g => (int)g);
+            if (input == null || key == null)
+                throw new ArgumentException("Null arguement provided");
+            if (input.Count() != 2)
+                throw new ArgumentException("Must act on two element lists");
+            var cipherInt = (input.Select(g => new IntegerModulo(26, g)).ToList() * key.Inverse).Select(g => g.Value);
+            return cipherInt;
         }
     }
 }
